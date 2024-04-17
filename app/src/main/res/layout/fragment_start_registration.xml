@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="userAccount"
+            type="com.futuremed.pacient.data.model.UserAccount" />
+
+        <variable
+            name="fragment"
+            type="com.futuremed.pacient.ui.startup.StartRegistrationFragment" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.general.startup.StartRegistrationFragment">
+
+        <include
+            android:id="@+id/user_type_choice"
+            layout="@layout/user_type_choose_layout"
+            android:visibility="visible"
+            app:fragment="@{fragment}" />
+
+        <include
+            android:id="@+id/user_registration_layout"
+            layout="@layout/user_account_registration_layout"
+            android:visibility="gone"
+            app:fragment="@{fragment}"
+            app:userAccount="@{userAccount}" />
+
+        <include
+            android:id="@+id/user_password_layout"
+            layout="@layout/user_input_password_layout"
+            android:visibility="gone"
+            app:fragment="@{fragment}"
+            app:userAccount="@{userAccount}" />
+
+    </FrameLayout>
+</layout>

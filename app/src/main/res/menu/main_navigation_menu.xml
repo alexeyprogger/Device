@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/home_navigation_button"
+        android:icon="@drawable/ic_home"
+
+        android:title="Главная"
+        app:showAsAction="withText" />
+
+    <item
+        android:id="@+id/chat_navigation_button"
+        android:icon="@drawable/ic_chat"
+        android:title="Чат"
+
+        app:showAsAction="withText" />
+
+    <item
+        android:id="@+id/map_navigation_button"
+        android:icon="@drawable/ic_geo"
+        android:title="Карта"
+         />
+
+    <item
+        android:id="@+id/more_navigation_button"
+        android:icon="@drawable/ic_more"
+        android:title="Еще"
+        app:showAsAction="withText" />
+
+
+</menu>

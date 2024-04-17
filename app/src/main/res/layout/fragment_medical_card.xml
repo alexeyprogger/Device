@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.futuremed.pacient.ui.medicalcard.MedicalCardFragment" />
+
+        <variable
+            name="medicalCard"
+            type="com.futuremed.pacient.data.model.MedicalCard" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_gradient"
+        android:orientation="vertical"
+        tools:context=".view.client.medicalcard.MedicalCardFragment">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="24dp"
+                        android:onClick="@{() -> fragment.close()}"
+                        android:src="@drawable/ic_back_button" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="24dp"
+                        android:text="Мед. карта"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <RelativeLayout
+                        android:id="@+id/medcard_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="48dp"
+                        android:background="@drawable/rounded_36_corners"
+                        android:backgroundTint="@color/white">
+
+                        <ImageView
+                            android:id="@+id/profile_img"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="22dp"
+                            android:src="@drawable/ic_baseline_account_circle_24" />
+
+                        <TextView
+                            android:id="@+id/name_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/profile_img"
+                            android:layout_marginStart="22dp"
+                            android:layout_toRightOf="@id/profile_img"
+                            android:text="@{fragment.fio}"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/age_sex_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/name_tv"
+                            android:layout_marginStart="22dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_toRightOf="@id/profile_img"
+                            android:text="22 года"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/blood_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/age_sex_tv"
+                            android:layout_marginStart="22dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_toRightOf="@id/profile_img"
+                            android:text="@{medicalCard.bloodType}"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                             />
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/analysis"
+                        android:layout_width="158dp"
+                        android:layout_height="126dp"
+                        android:layout_below="@id/medcard_info"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/rounded_36_corners"
+                        android:backgroundTint="@color/white">
+
+                        <TextView
+                            android:id="@+id/analysis_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@id/analysis_text"
+                            android:layout_marginTop="16dp"
+                            android:text="Анализы"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/analysis_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/analysis_title"
+                            android:layout_centerHorizontal="true"
+
+                            android:layout_marginStart="22dp"
+                            android:layout_marginTop="2dp"
+                            android:text="15 поликлиника\n01.05.2023"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="22dp"
+                            android:layout_marginTop="12dp"
+                            android:onClick="@{() -> fragment.openAnalysis()}"
+                            android:layout_marginBottom="18dp"
+                            android:background="@drawable/rounded_36_corners"
+                            android:backgroundTint="@color/light_green"
+                            android:paddingHorizontal="12dp"
+                            android:text="Подробнее"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/my_health"
+                        android:layout_width="match_parent"
+                        android:layout_height="126dp"
+                        android:layout_below="@id/medcard_info"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_toRightOf="@id/analysis"
+                        android:background="@drawable/rounded_36_corners"
+                        android:backgroundTint="@color/white">
+
+                        <TextView
+                            android:id="@+id/my_health_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@id/my_health_text"
+
+                            android:layout_marginTop="16dp"
+                            android:text="Мое здоровье"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/my_health_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/my_health_title"
+
+
+                            android:layout_marginStart="22dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Аллергии, привычки и \nт.д."
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:layout_alignLeft="@id/my_health_text"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="18dp"
+                            android:background="@drawable/rounded_36_corners"
+                            android:backgroundTint="@color/light_green"
+                            android:paddingHorizontal="12dp"
+                            android:text="Подробнее"
+                            android:onClick="@{() -> fragment.openMyHealth()}"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/visit_history"
+                        android:layout_width="match_parent"
+                        android:layout_height="126dp"
+                        android:layout_below="@id/my_health"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/rounded_36_corners"
+                        android:backgroundTint="@color/white">
+
+                        <TextView
+                            android:id="@+id/visit_history_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginStart="28dp"
+                            android:layout_marginTop="18dp"
+                            android:text="История посещений"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/visit_history_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/visit_history_title"
+                            android:layout_marginStart="28dp"
+                            android:layout_marginTop="2dp"
+                            android:text="Здесь вы можете посмотерть ваши\nпоследние визиты к врачу и многое другое"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:layout_alignLeft="@id/visit_history_text"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="18dp"
+                            android:background="@drawable/rounded_36_corners"
+                            android:backgroundTint="@color/light_green"
+                            android:paddingHorizontal="12dp"
+                            android:text="Подробнее"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+<!--                &lt;!&ndash;-->
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="24dp"-->
+<!--                    android:text="фио"-->
+<!--                    android:textSize="18sp" />-->
+
+<!--                <EditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="6dp"-->
+<!--                    android:hint="тут фио"-->
+<!--                    android:text="@{fragment.fio}"-->
+<!--                    android:textSize="20sp" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="12dp"-->
+<!--                    android:text="Возраст"-->
+<!--                    android:textSize="18sp" />-->
+
+<!--                <EditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="6dp"-->
+<!--                    android:hint="Введите возраст"-->
+<!--                    android:text="@={medicalCard.age}"-->
+<!--                    android:textSize="20sp" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="12dp"-->
+<!--                    android:text="Пол"-->
+<!--                    android:textSize="18sp" />-->
+
+<!--                <EditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="6dp"-->
+<!--                    android:hint="Введите пол"-->
+<!--                    android:textSize="20sp" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="12dp"-->
+<!--                    android:text="Рост (см)"-->
+<!--                    android:textSize="18sp" />-->
+
+<!--                <EditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="6dp"-->
+<!--                    android:hint="Введите рост"-->
+<!--                    android:text="@={medicalCard.height}"-->
+<!--                    android:textSize="20sp" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="12dp"-->
+<!--                    android:text="Вес (кг)"-->
+<!--                    android:textSize="18sp" />-->
+
+<!--                <EditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="6dp"-->
+<!--                    android:hint="Введите вес"-->
+<!--                    android:text="@={medicalCard.weight}"-->
+<!--                    android:textSize="20sp" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="12dp"-->
+<!--                    android:text="Группа крови"-->
+<!--                    android:textSize="18sp" />-->
+
+<!--                <EditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="6dp"-->
+<!--                    android:hint="Введите группу крови"-->
+<!--                    android:text="@={medicalCard.bloodType}"-->
+<!--                    android:textSize="20sp" />-->
+
+<!--                <Button-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:onClick="@{() -> fragment.saveMedicalData()}"-->
+<!--                    android:padding="10dp"-->
+<!--                    android:text="Сохранить" />-->
+-->
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

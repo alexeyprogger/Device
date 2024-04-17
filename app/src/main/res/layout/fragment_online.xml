@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_gradient"
+        android:orientation="vertical"
+        tools:context=".ui.medicalcard.MyHealthFragment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_back_button" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="24dp"
+                android:text="Запись к врачу"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/analysis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/rounded_36_corners"
+            android:backgroundTint="@color/white">
+
+            <TextView
+                android:id="@+id/analysis_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="16dp"
+                android:text="Мед учреждение"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+            <Spinner
+
+                android:textSize="16sp"
+                android:layout_marginStart="22dp"
+                android:id="@+id/hospital_list"
+                android:layout_below="@id/analysis_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/hospitals_array" />
+
+
+            <TextView
+                android:id="@+id/speciality"
+                android:layout_below="@id/hospital_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="16dp"
+                android:text="Специализация"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+            <Spinner
+                android:textSize="16sp"
+                android:layout_marginStart="22dp"
+                android:id="@+id/speciality_list"
+                android:layout_below="@id/speciality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/doctor_types_array"/>
+
+            <TextView
+                android:id="@+id/doctors"
+                android:layout_below="@id/speciality_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="16dp"
+                android:text="Специалист"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+            <Spinner
+                android:textSize="16sp"
+                android:layout_marginStart="22dp"
+                android:id="@+id/doctors_list"
+                android:layout_below="@id/doctors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/doctors_array"/>
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_below="@id/doctors_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="16dp"
+                android:text="Дата"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+            <Spinner
+                android:textSize="16sp"
+                android:layout_marginStart="22dp"
+                android:id="@+id/dates_list"
+                android:layout_below="@id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/dates_array"/>
+
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_below="@id/dates_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="16dp"
+                android:text="Время"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+            <Spinner
+                android:textSize="16sp"
+                android:layout_marginStart="22dp"
+                android:id="@+id/time_list"
+                android:layout_below="@id/time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/dates_array"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/record_button"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_below="@id/time_list"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="22dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="18dp"
+                android:background="@drawable/rounded_36_corners"
+                android:backgroundTint="@color/light_green"
+                android:paddingHorizontal="12dp"
+                android:text="Записаться"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</layout>
+
+
+    <!--
+
+
+
+
+
+    -->

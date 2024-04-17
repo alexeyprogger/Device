@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.futuremed.pacient.ui.startup.StartRegistrationFragment" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:background="@color/black"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:onClick="@{() -> fragment.setClientUserType()}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/logos"
+            android:scaleType="fitXY"/>
+
+    </RelativeLayout>
+</layout>

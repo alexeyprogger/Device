@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="userAccount"
+            type="com.futuremed.pacient.data.model.UserAccount" />
+
+        <variable
+            name="fragment"
+            type="com.futuremed.pacient.ui.startup.StartRegistrationFragment" />
+
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <include
+
+                        layout="@layout/logo"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_marginTop="64dp"
+                        android:background="@drawable/rounded_36_corners"
+                        android:layout_width="wrap_content"
+                        android:layout_height="42dp"
+                        android:backgroundTint="@color/light_green"
+                        android:layout_gravity="center_horizontal"
+                        android:paddingHorizontal="26dp"
+                        android:text="Пациент"
+                        android:textSize="18sp" />
+
+
+                    <EditText
+                        android:background="@drawable/rounded_36_corners"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="42dp"
+                        android:hint="Имя"
+                        android:paddingStart="14dp"
+                        android:backgroundTint="@color/white_grey"
+                        android:text="@={userAccount.name}"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:background="@drawable/rounded_36_corners"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="12dp"
+                        android:hint="Фамилия"
+                        android:paddingStart="14dp"
+                        android:backgroundTint="@color/white_grey"
+                        android:text="@={userAccount.surname}"
+                        android:textSize="16sp"
+                        android:importantForAutofill="no"
+                        android:textStyle="bold"
+                        tools:ignore="TextFields" />
+
+                    <EditText
+                        android:textStyle="bold"
+                        android:background="@drawable/rounded_36_corners"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="12dp"
+                        android:hint="Отчество"
+                        android:paddingStart="14dp"
+                        android:backgroundTint="@color/white_grey"
+                        android:text="@={userAccount.patronymic}"
+                        android:textSize="16sp" />
+
+
+                    <EditText
+                        android:textStyle="bold"
+                        android:background="@drawable/rounded_36_corners"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="12dp"
+                        android:hint="+7(999) 123-45-67"
+                        android:paddingStart="14dp"
+                        android:backgroundTint="@color/white_grey"
+                        android:text="@={userAccount.phoneNumber}"
+                        android:textSize="20sp" />
+
+
+                    <EditText
+                        android:textStyle="bold"
+                        android:background="@drawable/rounded_36_corners"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:layout_marginTop="12dp"
+                        android:hint="Email"
+                        android:paddingStart="14dp"
+                        android:backgroundTint="@color/white_grey"
+                        android:text="@={userAccount.email}"
+                        android:textSize="20sp" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="48dp">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:background="@drawable/rounded_36_corners_outline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="42dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:textStyle="bold"
+                            android:onClick="@{() -> fragment.createAccountPassword()}"
+                            android:paddingHorizontal="26dp"
+                            android:text="Продолжить"
+                            android:textSize="18sp" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</layout>

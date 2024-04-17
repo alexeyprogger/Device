@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">FutureMed</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string-array name="hospitals_array">
+        <item>Поликлиника №15</item>
+        <item>Городская поликлиника</item>
+        <item>Госпиталь №1</item>
+        <item>Частная клиника</item>
+    </string-array>
+
+    <string-array name="doctor_types_array">
+        <item>Терапевт</item>
+        <item>Стоматолог</item>
+        <item>Окулист</item>
+        <item>Лор</item>
+        <item>Дерматолог</item>
+        <item>Кардиолог</item>
+    </string-array>
+
+    <string-array name="doctors_array">
+        <item>Данилова А.А.</item>
+        <item>Осипова Л.В.</item>
+        <item>Бульман Е.А.</item>
+        <item>Агафонов Н.И.</item>
+    </string-array>
+
+    <string-array name="dates_array">
+        <item>01.06.2023</item>
+        <item>02.06.2023</item>
+        <item>05.06.2023</item>
+        <item>07.06.2023</item>
+    </string-array>
+
+    <string-array name="times_array">
+        <item>9:00</item>
+        <item>10:00</item>
+        <item>12:30</item>
+        <item>13:00</item>
+    </string-array>
+</resources>
