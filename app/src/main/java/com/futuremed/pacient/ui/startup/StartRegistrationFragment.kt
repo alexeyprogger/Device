@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.futuremed.pacient.AppSettings
@@ -58,18 +59,33 @@ class StartRegistrationFragment(
     }
 
     fun createAccountPassword() {
-        binding.userRegistrationLayout.root.visibility = View.GONE
-        binding.userPasswordLayout.root.visibility = View.VISIBLE
-        binding.invalidateAll()
+        if(binding.userRegistrationLayout.userNameText.text.toString().trim()==""
+            || binding.userRegistrationLayout.userSurnameText.text.toString().trim()==""
+            || binding.userRegistrationLayout.userPartText.text.toString().trim()==""
+            || binding.userRegistrationLayout.userNumberText.text.toString().trim()==""
+            || binding.userRegistrationLayout.userMailText.text.toString().trim()==""){
+            Toast.makeText(binding.root.context,"Все поля необходимо заполнить!", Toast.LENGTH_SHORT).show()
+        }
+        else {
+            binding.userRegistrationLayout.root.visibility = View.GONE
+            binding.userPasswordLayout.root.visibility = View.VISIBLE
+            binding.invalidateAll()
+        }
     }
 
     fun completeRegistration() {
-        binding.userPasswordLayout.root.visibility = View.GONE
-        binding.invalidateAll()
-        val appSettings = AppSettings(binding.root.context)
-        appSettings.changeFirstStart()
-        saveData()
-        onRegistered()
+        if(binding.userPasswordLayout.userPasswordText.text.toString().trim() == ""){
+            Toast.makeText(binding.root.context,"Введите пароль!", Toast.LENGTH_SHORT).show()
+        }
+        else {
+            Toast.makeText(binding.root.context,"Регистрация успешно завершена!", Toast.LENGTH_SHORT).show()
+            binding.userPasswordLayout.root.visibility = View.GONE
+            binding.invalidateAll()
+            val appSettings = AppSettings(binding.root.context)
+            appSettings.changeFirstStart()
+            saveData()
+            onRegistered()
+        }
     }
 
     private fun saveData() {

@@ -20,6 +20,7 @@ class MyHealthFragment : Fragment() {
 
         val back = view.findViewById<ImageView>(R.id.back_btn)
         back.setOnClickListener {
+
             val fragmentManager = parentFragmentManager
             fragmentManager.popBackStack()
         }

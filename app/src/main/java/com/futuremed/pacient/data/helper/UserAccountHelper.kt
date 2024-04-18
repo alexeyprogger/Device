@@ -10,12 +10,12 @@ class UserAccountHelper(context: Context) {
 
     fun getUserAccount(): UserAccount {
         return UserAccount(
-            name = getUserName(),
-            surname = getUserSurname(),
-            patronymic = getUserPatronymic(),
-            phoneNumber = getUserPhoneNumber(),
-            email = getUserEmail(),
-            password = getUserPassword()
+            name = getUserName().trim(),
+            surname = getUserSurname().trim(),
+            patronymic = getUserPatronymic().trim(),
+            phoneNumber = getUserPhoneNumber().trim(),
+            email = getUserEmail().trim(),
+            password = getUserPassword().trim()
         )
     }
 

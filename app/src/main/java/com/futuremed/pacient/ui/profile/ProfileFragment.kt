@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.futuremed.pacient.ui.medicalcard.MedicalCardFragment
 import com.futuremed.pacient.R
@@ -59,9 +60,13 @@ class ProfileFragment : Fragment() {
 
     fun close() {
         val fragmentManager = parentFragmentManager
-        fragmentManager.popBackStack()
-        if (userAccount.name.trim() != "") {
+        if (userAccount.name.trim() != "" && userAccount.surname.trim()!=""
+            && userAccount.patronymic.trim()!="" && userAccount.phoneNumber.trim()!=""
+            && userAccount.email.trim()!="") {
             helper.saveUserAccount(userAccount)
+            fragmentManager.popBackStack()
         }
+        else{
+            Toast.makeText(binding.root.context,"Не должно быть пустых полей!", Toast.LENGTH_SHORT).show()}
     }
 }

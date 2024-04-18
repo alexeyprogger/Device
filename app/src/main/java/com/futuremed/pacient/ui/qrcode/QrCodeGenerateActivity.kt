@@ -33,24 +33,6 @@ class QrCodeGenerateActivity : AppCompatActivity() {
         binding.activity = this
 
         binding.qrCodeContainer.setImageBitmap(getQrCodeBitmap())
-
-        val db = baseContext.openOrCreateDatabase("app.db", MODE_PRIVATE, null)
-        db.execSQL("CREATE TABLE IF NOT EXISTS users (name TEXT, age INTEGER, UNIQUE(name))")
-        db.execSQL("INSERT OR IGNORE INTO users VALUES ('Tom Smith', 23), ('John Dow', 31), ('Tata Tata', 45);")
-
-        val query: Cursor = db.rawQuery("SELECT * FROM users;", null)
-        val textView = findViewById<TextView>(R.id.textDB)
-        textView.text = "";
-
-        textView?.let {
-            while (query.moveToNext()) {
-                val name: String = query.getString(0)
-                val age: Int = query.getInt(1)
-                textView.append("Name: $name\n")
-            }
-            query.close()
-            db.close()
-        } ?: Log.e("MainActivity", "TextView is null")
     }
 
     //Генерация qr-кода
