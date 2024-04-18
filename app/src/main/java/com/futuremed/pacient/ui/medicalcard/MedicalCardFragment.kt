@@ -82,6 +82,12 @@ class MedicalCardFragment(
             .replace(R.id.main_container, MyHealthFragment()).addToBackStack(null).commit()
     }
 
+    fun openMyHistory() {
+        val fragmentManager = parentFragmentManager
+        fragmentManager.beginTransaction()
+            .replace(R.id.main_container, VisitHistoryFragment()).addToBackStack(null).commit()
+    }
+
     fun close() {
         val fragmentManager = parentFragmentManager
         fragmentManager.popBackStack()

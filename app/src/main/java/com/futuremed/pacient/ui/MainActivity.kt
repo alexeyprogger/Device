@@ -1,17 +1,21 @@
 package com.futuremed.pacient.ui
 
 import android.content.Intent
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
+import android.database.Cursor
 import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.futuremed.pacient.R
-import com.futuremed.pacient.data.model.UserAccount
 import com.futuremed.pacient.ui.chats.ChatListFragment
 import com.futuremed.pacient.ui.mainpage.MainPageFragment
 import com.futuremed.pacient.ui.map.MapFragment
 import com.futuremed.pacient.ui.more.MoreInformationFragment
 import com.futuremed.pacient.ui.qrcode.QrCodeGenerateActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
-        val mainPageFragment = MainPageFragment{openQrCode()}
+        val mainPageFragment = MainPageFragment { openQrCode() }
         val mapFragment = MapFragment()
 
         val navigationView: BottomNavigationView =
@@ -48,6 +52,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
     private fun openQrCode() {
         startActivity(Intent(this, QrCodeGenerateActivity::class.java))
     }
