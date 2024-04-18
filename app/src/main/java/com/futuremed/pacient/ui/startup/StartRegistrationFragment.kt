@@ -74,8 +74,13 @@ class StartRegistrationFragment(
     }
 
     fun completeRegistration() {
-        if(binding.userPasswordLayout.userPasswordText.text.toString().trim() == ""){
+        val password = binding.userPasswordLayout.userPasswordText.text.toString().trim()
+        val repeatPassword =  binding.userPasswordLayout.userRepeatPasswordText.text.toString().trim()
+        if(password == ""){
             Toast.makeText(binding.root.context,"Введите пароль!", Toast.LENGTH_SHORT).show()
+        }
+        else if(password != repeatPassword){
+            Toast.makeText(binding.root.context,"Пароли не совпадают!", Toast.LENGTH_SHORT).show()
         }
         else {
             Toast.makeText(binding.root.context,"Регистрация успешно завершена!", Toast.LENGTH_SHORT).show()
