@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/background_gradient"
+        android:background="@color/mid_white"
         tools:context=".view.client.mainpage.MainPageFragment">
 
         <RelativeLayout
@@ -54,7 +54,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/backgr_color"
+                android:background="@color/orange"
                 android:orientation="vertical">
 
 
@@ -98,7 +98,7 @@
                         android:layout_below="@id/call_help_button"
                         android:layout_marginTop="16dp"
                         android:background="@drawable/rounded_36_corners"
-                        android:backgroundTint="@color/light_green"
+                        android:backgroundTint="@color/orange"
                         android:elevation="10dp"
                         android:onClick="@{() -> fragment.openMedicalcard()}">
 
@@ -135,7 +135,7 @@
                             android:onClick="@{() -> fragment.generateQrCode()}"
                             android:paddingHorizontal="12dp"
                             android:text="Мой QR-код"
-                            android:textColor="@color/light_green"
+                            android:textColor="@color/orange"
                             android:textSize="12sp"
                             android:textStyle="bold" />
 
@@ -167,7 +167,7 @@
                             android:layout_marginStart="28dp"
                             android:layout_marginTop="16dp"
                             android:text="Онлайн-консультация"
-                            android:textColor="@color/light_green"
+                            android:textColor="#faaf20"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -189,7 +189,7 @@
                             android:layout_marginStart="28dp"
                             android:layout_marginTop="12dp"
                             android:background="@drawable/rounded_36_corners"
-                            android:backgroundTint="@color/light_green"
+                            android:backgroundTint="@color/orange"
                             android:onClick="@{() -> fragment.makeOnlineConsultation()}"
                             android:paddingHorizontal="12dp"
                             android:text="Связаться"
@@ -225,7 +225,7 @@
                             android:layout_marginStart="28dp"
                             android:layout_marginTop="16dp"
                             android:text="Запись к врачу"
-                            android:textColor="@color/light_green"
+                            android:textColor="@color/orange"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -247,7 +247,7 @@
                             android:layout_marginStart="28dp"
                             android:layout_marginTop="12dp"
                             android:background="@drawable/rounded_36_corners"
-                            android:backgroundTint="@color/light_green"
+                            android:backgroundTint="@color/orange"
                             android:onClick="@{() -> fragment.makeRecordToDoctor()}"
                             android:paddingHorizontal="12dp"
                             android:text="Записаться"

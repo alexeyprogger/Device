@@ -4,26 +4,29 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-<RelativeLayout
-    android:layout_centerHorizontal="true"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/vector_5"/>
+    <RelativeLayout
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="FutureMed"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textSize="40sp"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="40dp"/>
+        <ImageView
+            android:layout_width="269dp"
+            android:layout_height="234dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="11dp"
+            android:src="@drawable/device" />
 
-</RelativeLayout>
+        <!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:layout_marginStart="40dp"-->
+<!--            android:text="FutureMed"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="40sp"-->
+<!--            android:textStyle="bold" />-->
+
+    </RelativeLayout>
 
 
 

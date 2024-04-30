@@ -44,7 +44,7 @@
                android:textSize="14sp"
                android:textColor="@color/white"
                android:background="@drawable/rounded_36_corners"
-               android:backgroundTint="@color/light_green"
+               android:backgroundTint="#faaf20"
                android:paddingHorizontal="24dp"/>
 
            <TextView

@@ -1,12 +1,12 @@
 package com.futuremed.pacient.ui.qrcode
 
-import android.database.Cursor
 import android.graphics.Bitmap
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.view.View
+import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.futuremed.pacient.R
 import com.futuremed.pacient.data.helper.UserAccountHelper
@@ -16,8 +16,8 @@ import com.google.zxing.BarcodeFormat
 import com.google.zxing.EncodeHintType
 import com.google.zxing.qrcode.QRCodeWriter
 
-class QrCodeGenerateActivity : AppCompatActivity() {
 
+class QrCodeGenerateActivity : AppCompatActivity() {
     private lateinit var userAccount: UserAccount
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -26,11 +26,12 @@ class MedicalCardFragment(
         patronymic = "",
         phoneNumber = "",
         email = "",
+        birth = "",
         password = ""
     )
 
 
-    var medicalCard: MedicalCard =
+    private var medicalCard: MedicalCard =
         MedicalCard(bloodType = "1+", gender = UserGender.WOMAN)
 
     lateinit var medicalCardHelper: MedicalCardHelper

@@ -37,14 +37,14 @@
 
                     <include
 
-                        layout="@layout/logo"/>
+                        layout="@layout/logo" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:layout_marginTop="64dp"
                         android:background="@drawable/rounded_36_corners"
                         android:layout_width="wrap_content"
                         android:layout_height="42dp"
-                        android:backgroundTint="@color/light_green"
+                        android:backgroundTint="#faaf20"
                         android:layout_gravity="center_horizontal"
                         android:paddingHorizontal="26dp"
                         android:text="Пациент"
@@ -52,49 +52,7 @@
 
 
                     <EditText
-                        android:background="@drawable/rounded_36_corners"
-                        android:id="@+id/user_name_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="42dp"
-                        android:layout_marginTop="42dp"
-                        android:hint="Имя"
-                        android:paddingStart="14dp"
-                        android:backgroundTint="@color/white_grey"
-                        android:text="@={userAccount.name}"
-                        android:textSize="16sp"
-                        android:textStyle="bold"/>
-
-                    <EditText
-                        android:id="@+id/user_surname_text"
-                        android:background="@drawable/rounded_36_corners"
-                        android:layout_width="match_parent"
-                        android:layout_height="42dp"
-                        android:layout_marginTop="12dp"
-                        android:hint="Фамилия"
-                        android:paddingStart="14dp"
-                        android:backgroundTint="@color/white_grey"
-                        android:text="@={userAccount.surname}"
-                        android:textSize="16sp"
-                        android:importantForAutofill="no"
-                        android:textStyle="bold"
-                        tools:ignore="TextFields" />
-
-                    <EditText
-                        android:id="@+id/user_part_text"
-                        android:textStyle="bold"
-                        android:background="@drawable/rounded_36_corners"
-                        android:layout_width="match_parent"
-                        android:layout_height="42dp"
-                        android:layout_marginTop="12dp"
-                        android:hint="Отчество"
-                        android:paddingStart="14dp"
-                        android:backgroundTint="@color/white_grey"
-                        android:text="@={userAccount.patronymic}"
-                        android:textSize="16sp" />
-
-
-                    <EditText
-                        android:id="@+id/user_number_text"
+                        android:id="@+id/idEdtPhoneNumber"
                         android:textStyle="bold"
                         android:background="@drawable/rounded_36_corners"
                         android:layout_width="match_parent"
@@ -107,18 +65,33 @@
                         android:textSize="20sp" />
 
 
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/idBtnGetOtp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="12dp"
+                        android:background="#faaf20"
+                        android:paddingHorizontal="30dp"
+                        android:paddingVertical="20dp"
+                        android:onClick="@{() -> fragment.sendCode()}"
+                        android:hint="Отправить код"
+                        android:textColor="@color/white" />
                     <EditText
-                        android:id="@+id/user_mail_text"
+                        android:id="@+id/idEdtOtp"
                         android:textStyle="bold"
                         android:background="@drawable/rounded_36_corners"
                         android:layout_width="match_parent"
                         android:layout_height="42dp"
                         android:layout_marginTop="12dp"
-                        android:hint="Email"
+                        android:hint="Код подтверждения"
+
                         android:paddingStart="14dp"
                         android:backgroundTint="@color/white_grey"
-                        android:text="@={userAccount.email}"
                         android:textSize="20sp" />
+
+
 
 
                     <RelativeLayout
@@ -127,13 +100,14 @@
                         android:layout_marginTop="48dp">
 
                         <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/idBtnVerify"
                             android:background="@drawable/rounded_36_corners_outline"
                             android:layout_width="wrap_content"
                             android:layout_height="42dp"
                             android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
                             android:textStyle="bold"
-                            android:onClick="@{() -> fragment.createAccountPassword()}"
+                            android:onClick="@{() -> fragment.verifyCode()}"
                             android:paddingHorizontal="26dp"
                             android:text="Продолжить"
                             android:textSize="18sp" />

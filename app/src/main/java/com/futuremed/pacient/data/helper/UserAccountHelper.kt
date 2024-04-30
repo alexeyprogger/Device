@@ -15,6 +15,7 @@ class UserAccountHelper(context: Context) {
             patronymic = getUserPatronymic().trim(),
             phoneNumber = getUserPhoneNumber().trim(),
             email = getUserEmail().trim(),
+            birth = getUserBirth().trim(),
             password = getUserPassword().trim()
         )
     }
@@ -25,6 +26,7 @@ class UserAccountHelper(context: Context) {
         saveUserPatronymic(userAccount.patronymic)
         saveUserPhoneNumber(userAccount.phoneNumber)
         saveUserEmail(userAccount.email)
+        saveUserBirth(userAccount.birth)
         saveUserPassword(userAccount.password)
     }
 
@@ -46,6 +48,9 @@ class UserAccountHelper(context: Context) {
 
     private fun getUserEmail(): String {
         return preferences.getString(USER_EMAIL_KEY, "none").toString()
+    }
+    private fun getUserBirth(): String {
+        return preferences.getString(USER_BIRTH_KEY, "none").toString()
     }
 
     private fun getUserPassword(): String {
@@ -70,6 +75,9 @@ class UserAccountHelper(context: Context) {
 
     private fun saveUserEmail(email: String) {
         editor.putString(USER_EMAIL_KEY, email).apply()
+    }
+    private fun saveUserBirth(birth: String) {
+        editor.putString(USER_BIRTH_KEY, birth).apply()
     }
 
     private fun saveUserPassword(password: String) {
